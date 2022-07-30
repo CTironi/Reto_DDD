@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.Entity;
 import com.sofka.hotel.usuario.values.Fecha;
 import com.sofka.hotel.usuario.values.Origen;
 import com.sofka.hotel.usuario.values.ReclamoID;
-import com.sofka.hotel.usuario.values.Tipo;
+
 
 import java.util.Objects;
 
