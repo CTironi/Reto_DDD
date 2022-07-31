@@ -18,7 +18,7 @@ public class Recepcionista extends AggregateEvent<RecepcionistaID> {
     protected Habitacion habitacion;
     protected Factura factura;
 
-    public Recepcionista(RecepcionistaID recepcionistaID, NombreRecepcionista nombreRecepcionista, Cliente cliente, Habitacion habitacion, Factura factura) {
+    public Recepcionista(RecepcionistaID recepcionistaID, NombreRecepcionista nombreRecepcionista) {
         super(recepcionistaID);
         appendChange(new RecepcionistaCreated(nombreRecepcionista)).apply();
     }

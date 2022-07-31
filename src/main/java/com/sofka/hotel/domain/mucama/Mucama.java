@@ -17,7 +17,7 @@ public class Mucama extends AggregateEvent<MucamaID> {
     protected Carrito carrito;
     protected Piso piso;
 
-    public Mucama(MucamaID mucamaID, NombreMucama nombreMucama, Tarea tarea, Carrito carrito, Piso piso) {
+    public Mucama(MucamaID mucamaID, NombreMucama nombreMucama, Piso piso) {
         super(mucamaID);
         appendChange(new MucamaCreated(nombreMucama)).apply();
     }
