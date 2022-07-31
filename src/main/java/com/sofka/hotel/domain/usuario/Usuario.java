@@ -9,6 +9,7 @@ import com.sofka.hotel.domain.usuario.values.*;
 
 
 import java.util.List;
+import java.util.Objects;
 
 public class Usuario extends AggregateEvent<UsuarioID> {
 
@@ -46,6 +47,14 @@ public class Usuario extends AggregateEvent<UsuarioID> {
     }
     public void updatePedidoTipo(PedidoID pedidoID, Tipo tipo){
         appendChange(new PedidoTipoUpdated(pedidoID, tipo)).apply();
+    }
+    public void notifyUsuarioCreado(String notification){
+        Objects.requireNonNull(notification);
+        appendChange(new UsuarioNotificacion(notification)).apply();
+    }
+    public void notificacionReclamoAdded(String message){
+        Objects.requireNonNull(message);
+        appendChange(new ReclamoAddedNotificacion(message)).apply();
     }
 
     public Nombre getNombre() {
