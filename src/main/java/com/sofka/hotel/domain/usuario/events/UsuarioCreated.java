@@ -7,8 +7,8 @@ import com.sofka.hotel.domain.usuario.values.UsuarioID;
 
 public class UsuarioCreated extends DomainEvent {
 
-    private final UsuarioID usuarioID;
-    private final Nombre nombre;
+    public final UsuarioID usuarioID;
+    public final Nombre nombre;
 
     public UsuarioCreated(UsuarioID usuarioID, Nombre nombre){
         super("com.sofka.hotel.domain.usuario.usuariocreated");
