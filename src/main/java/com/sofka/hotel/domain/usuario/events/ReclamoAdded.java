@@ -9,9 +9,9 @@ public class ReclamoAdded extends DomainEvent {
 
     private final ReclamoID reclamoID;
 
-    private final Origen origen;
+    public final Origen origen;
 
-    private final Fecha fecha;
+    public final Fecha fecha;
 
     public ReclamoAdded(ReclamoID reclamoID, Origen origen, Fecha fecha){
         super("com.sofka.hotel.domain.usuario.reclamoadded");

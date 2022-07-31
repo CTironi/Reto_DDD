@@ -19,7 +19,7 @@ public class Usuario extends AggregateEvent<UsuarioID> {
 
     public Usuario(UsuarioID usuarioID, Nombre nombre) {
         super(usuarioID);
-        appendChange(new UsuarioCreated(nombre)).apply();
+        appendChange(new UsuarioCreated(usuarioID, nombre)).apply();
     }
     private Usuario(UsuarioID usuarioID) {
         super(usuarioID);
