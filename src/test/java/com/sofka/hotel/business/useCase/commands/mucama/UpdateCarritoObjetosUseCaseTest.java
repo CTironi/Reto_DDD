@@ -1,4 +1,4 @@
-/*package com.sofka.hotel.business.useCase.commands.mucama;
+package com.sofka.hotel.business.useCase.commands.mucama;
 
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
@@ -17,18 +17,16 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class UpdateCarritoObjetosUseCaseTest {
     @InjectMocks
-    private UpdateCarritoObjetos useCase;
+    private UpdateCarritoObjetosUseCase useCase;
 
     @Mock
     private DomainEventRepository repository;
@@ -65,4 +63,4 @@ class UpdateCarritoObjetosUseCaseTest {
 
         return List.of(event1,event2);
     }
-}*/
+}

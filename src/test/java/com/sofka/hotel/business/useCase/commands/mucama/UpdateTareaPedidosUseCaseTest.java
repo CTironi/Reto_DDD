@@ -1,14 +1,12 @@
-/*package com.sofka.hotel.business.useCase.commands.mucama;
+package com.sofka.hotel.business.useCase.commands.mucama;
 
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofka.hotel.domain.mucama.commands.UpdateCarritoObjetos;
 import com.sofka.hotel.domain.mucama.commands.UpdateTareaPedidos;
 import com.sofka.hotel.domain.mucama.events.*;
 import com.sofka.hotel.domain.mucama.values.*;
-import com.sofka.hotel.domain.usuario.entities.Pedido;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -23,7 +21,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class UpdateTareaPedidosUseCaseTest {
     @InjectMocks
-    private UpdateTareaPedidos useCase;
+    private UpdateTareaPedidosUseCase useCase;
 
     @Mock
     private DomainEventRepository repository;
@@ -33,7 +31,9 @@ public class UpdateTareaPedidosUseCaseTest {
 
         MucamaID mucamaID = MucamaID.of("1");
         TareaID tareaID = TareaID.of("2");
-        Pedidos pedidos = new Pedidos("cena al 220");
+        Pedidos pedidos = new Pedidos("Cena al 220");
+        Limpieza limpieza = new Limpieza("Limpiar 190");
+        Equipaje equipaje = new Equipaje("Organizar equipaje 200");
 
         var command = new UpdateTareaPedidos(mucamaID, tareaID, pedidos);
 
@@ -54,11 +54,11 @@ public class UpdateTareaPedidosUseCaseTest {
     private List<DomainEvent> history(){
 
         var event1 = new MucamaCreated(new NombreMucama("Vero"));
-        var event2 = new TareaAdded(new TareaID("2"), new Pedidos("cena al 220"));
+        var event2 = new TareaAdded(new TareaID("2"), new Pedidos("cena al 220"), new Limpieza("Limpiar 190"), new Equipaje("Organizar equipaje 200"));
 
         event1.setAggregateRootId("xxxxx");
 
         return List.of(event1,event2);
     }
 
-}*/
+}

@@ -14,4 +14,5 @@ public class Origen implements ValueObject<String> {
     public String value() {
         return this.value;
     }
+
 }

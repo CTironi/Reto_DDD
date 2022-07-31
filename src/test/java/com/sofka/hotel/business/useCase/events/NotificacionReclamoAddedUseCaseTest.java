@@ -1,4 +1,4 @@
-/*package com.sofka.hotel.business.useCase.events;
+package com.sofka.hotel.business.useCase.events;
 
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
@@ -7,6 +7,7 @@ import com.sofka.hotel.domain.usuario.events.ReclamoAdded;
 import com.sofka.hotel.domain.usuario.events.ReclamoAddedNotificacion;
 import com.sofka.hotel.domain.usuario.values.Fecha;
 import com.sofka.hotel.domain.usuario.values.Origen;
+import com.sofka.hotel.domain.usuario.values.ReclamoID;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,7 +23,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class NotificacionReclamoAddedUseCaseTest {
     @InjectMocks
-    private NotificacionUsuarioCreatedUseCase useCase;
+    private NotificacionReclamoAddedUseCase useCase;
 
     @Mock
     private DomainEventRepository repository;
@@ -30,7 +31,7 @@ public class NotificacionReclamoAddedUseCaseTest {
     @Test
     void EnviarNotificacion(){
 
-        var event = new ReclamoAdded(new Origen("ruido")));
+        var event = new ReclamoAdded(new ReclamoID() , new Origen("ruido"), new Fecha(LocalDate.of(1999, 10, 10)));
 
         event.setAggregateRootId("xxx");
 
@@ -49,4 +50,4 @@ public class NotificacionReclamoAddedUseCaseTest {
         Assertions.assertEquals("Reclamo Registrado",notificacion.getMessage());
 
     }
-}*/
+}
